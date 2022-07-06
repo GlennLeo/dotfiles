@@ -2,6 +2,10 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "cobalt2"
+vim.o.guifont = "BlexMono NF"
+vim.g.neovide_transparency = 1
+
+
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = ","
@@ -81,12 +85,6 @@ code_actions.setup {
 
 
 lvim.plugins = {
-  {
-    "matze/vim-move",
-    config = function()
-      vim.g.move_key_modifier = 'C'
-    end,
-  },
   -- COLORSCHEME
   {
     'marko-cerovac/material.nvim',
@@ -104,6 +102,12 @@ lvim.plugins = {
   {
     "Glennleo/cobalt2",
     config = function()
+    end,
+  },
+  {
+    "ayu-theme/ayu-vim",
+    config = function()
+      vim.g.ayucolor = "dark"
     end,
   },
   {
@@ -127,6 +131,12 @@ lvim.plugins = {
       vim.g.oceanic_next_terminal_bold = 1
       vim.g.oceanic_next_terminal_italic = 1
     end
+  },
+  {
+    "matze/vim-move",
+    config = function()
+      vim.g.move_key_modifier = 'C'
+    end,
   },
   { "mg979/vim-visual-multi" },
   { "tpope/vim-surround" },
@@ -277,6 +287,7 @@ lvim.builtin.which_key.mappings = {
   },
   g = {
     name = "Git",
+    t = { "<cmd>lua require 'gitsigns'.toggle_current_line_blame()<cr>", "Toggle blame" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -405,6 +416,11 @@ lvim.builtin.which_key.mappings = {
     },
   },
   t = {
+    name = "Terminal",
+    f = { "<cmd>ToggleTerm<cr>", "Float" },
+    v = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical" },
+  },
+  z = {
     name = "Treesitter",
     h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
     p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" }
