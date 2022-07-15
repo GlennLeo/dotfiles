@@ -58,19 +58,27 @@ return packer.startup(function(use)
   use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
   use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
   use("folke/which-key.nvim")
-  use("matze/vim-move")
   use("mg979/vim-visual-multi")
   use("windwp/nvim-ts-autotag")
   use("folke/todo-comments.nvim")
   use("karb94/neoscroll.nvim")
   use({ "echasnovski/mini.nvim", branch = "stable" })
-  use({"folke/trouble.nvim"})
+  use({ "folke/trouble.nvim" })
 
   -- Colorschemes
   use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
   use("lunarvim/darkplus.nvim")
   use("Glennleo/cobalt2")
   use({ 'projekt0n/github-nvim-theme' })
+  use({ 'NLKNguyen/papercolor-theme' })
+  use({ 'sainnhe/edge' })
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  })
+  use({
+    "olimorris/onedarkpro.nvim",
+  })
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
@@ -88,6 +96,10 @@ return packer.startup(function(use)
   use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
   use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
   use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
@@ -100,6 +112,7 @@ return packer.startup(function(use)
 
   -- Git
   use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
+  use({ "kdheepak/lazygit.nvim" })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
