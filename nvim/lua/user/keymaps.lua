@@ -6,7 +6,7 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", ",", "<Nop>", opts)
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
@@ -67,3 +67,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 --
+keymap('n', '<C-j>', ":MoveLine(1)<CR>", opts)
+keymap('n', '<C-k>', ":MoveLine(-1)<CR>", opts)
+keymap('v', '<C-j>', ":MoveBlock(1)<CR>", opts)
+keymap('v', '<C-k>', ":MoveBlock(-1)<CR>", opts)
+keymap('n', '<C-l>', ":MoveHChar(1)<CR>", opts)
+keymap('n', '<C-h>', ":MoveHChar(-1)<CR>", opts)
+keymap('v', '<C-l>', ":MoveHBlock(1)<CR>", opts)
+keymap('v', '<C-h>', ":MoveHBlock(-1)<CR>", opts)

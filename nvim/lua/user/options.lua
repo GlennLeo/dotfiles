@@ -30,6 +30,7 @@ local options = {
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
+  termguicolors = true,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
